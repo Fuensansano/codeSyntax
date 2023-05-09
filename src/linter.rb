@@ -1,8 +1,6 @@
 class Linter
   def parse(code_syntax)
-    return false if code_syntax === '<'
-    return false if code_syntax === '>'
-    return false if code_syntax === '><'
-    true
+    return true if code_syntax === '<>'
+    false
   end
 end
