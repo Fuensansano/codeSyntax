@@ -1,7 +1,13 @@
 require_relative '../src/linter'
 
 describe Linter do
-  ['<>', '<><>','<><><>','<<>>','<<><>><>'].each do |right_code_syntax|
+  ['<>',
+    '<><>',
+    '<><><>',
+    '<<>>',
+    '<<><>><>',
+    '<< >>'
+  ].each do |right_code_syntax|
     it "given #{right_code_syntax} then return true" do
       linter = Linter.new
 
