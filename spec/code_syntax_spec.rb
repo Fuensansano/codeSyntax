@@ -1,29 +1,19 @@
 require_relative '../src/linter'
 
 describe Linter do
-  it 'given <> then return true' do
-    linter = Linter.new
-
-    expect(linter.parse('<>')).to be(true)
-  end
-
-  it 'given <><> then return true' do
-    linter = Linter.new
-
-    expect(linter.parse('<><>')).to be(true)
-  end
-
-  it 'given <><><> then return true' do
-    linter = Linter.new
-
-    expect(linter.parse('<><><>')).to be(true)
-  end
-
-  ['><', '>','<'].each do |code_syntax|
-    it "given #{code_syntax} then return false" do
+  ['<>', '<><>','<><><>'].each do |right_code_syntax|
+    it "given #{right_code_syntax} then return true" do
       linter = Linter.new
 
-      expect(linter.parse(code_syntax)).to be(false)
+      expect(linter.parse(right_code_syntax)).to be(true)
+    end
+  end
+
+  ['><', '>','<'].each do |wrong_code_syntax|
+    it "given #{wrong_code_syntax} then return false" do
+      linter = Linter.new
+
+      expect(linter.parse(wrong_code_syntax)).to be(false)
     end
   end
 end
