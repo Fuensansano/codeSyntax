@@ -12,4 +12,10 @@ describe Linter do
 
     expect(linter.parse('<')).to be(false)
   end
+
+  it 'given > then return false' do
+    linter = Linter.new
+
+    expect(linter.parse('>')).to be(false)
+  end
 end
