@@ -15,16 +15,7 @@ describe Linter do
     end
   end
 
-  [
-    '><',
-    '>',
-    '<',
-    '><<>',
-    '<>><',
-    '<<',
-    '>>',
-    '><><<'
-  ].each do |wrong_code_syntax|
+  %w[>< > < ><<> <>>< << >> ><><<].each do |wrong_code_syntax|
     it "given #{wrong_code_syntax} then return false" do
       linter = Linter.new
 
