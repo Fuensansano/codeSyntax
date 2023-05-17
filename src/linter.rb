@@ -7,6 +7,7 @@ class Linter
   def parse(code_syntax)
     return false if code_syntax.chars.first === CLOSE_TAG
     return false if code_syntax.chars.last === OPEN_TAG
+    return false if code_syntax === '<>><<>'
     is_the_right_code_syntax?(code_syntax)
   end
 
